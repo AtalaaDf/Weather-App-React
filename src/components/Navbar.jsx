@@ -1,13 +1,14 @@
-import {NavigationMenu, NavigationMenuList, 
-        NavigationMenuItem, NavigationMenuLink} from '@/components/ui/navigation-menu'
-import {CommandDialog, CommandInput, CommandList, 
-        CommandEmpty, CommandGroup, CommandItem} from '@/components/ui/command'
-import { Switch } from '@/components/ui/switch'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button'
-import { Command } from '@/components/ui/command'
-
+    import {NavigationMenu, NavigationMenuList, 
+    NavigationMenuItem, NavigationMenuLink} from '@/components/ui/navigation-menu'
+    import {CommandDialog, CommandInput, CommandList, 
+    CommandEmpty, CommandGroup, CommandItem} from '@/components/ui/command'
+    import { Switch } from '@/components/ui/switch'
+    import { useEffect, useState } from 'react'
+    import { Link } from 'react-router-dom'
+    import { Button } from '@/components/ui/button'
+    import { Command } from '@/components/ui/command'
+    const navLinkClass = "px-3 py-2 rounded-md text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+    
 function Navbar(){
     const [isDark, setIsDark] = useState(
         localStorage.getItem('theme') === 'true'
@@ -37,6 +38,7 @@ function Navbar(){
         },[])
 
 
+
     return(
         <>
 
@@ -44,13 +46,27 @@ function Navbar(){
         justify-between items-center px-6 py-3">
         <h1 className='text-blue-500 font-bold text-xl'>⛅Weather App</h1>
         
-        <NavigationMenu>
-            <NavigationMenuList>
+        <NavigationMenu className={"font-medium text-muted-foreground"}>
+            <NavigationMenuList className={"gap-2 flex-row items-center"}>
+
                 <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
+                    <NavigationMenuLink asChild className={navLinkClass}>
                         <Link to="/">Home</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <NavigationMenuLink asChild className={navLinkClass}>
+                        <Link to="/Tersimpan">Tersimpan</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                    <NavigationMenuLink asChild className={navLinkClass}>
+                        <Link to="/Tentang">Tentang</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+
             </NavigationMenuList>
         </NavigationMenu>
 
