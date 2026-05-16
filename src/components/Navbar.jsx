@@ -69,12 +69,13 @@ function Navbar(){
 
             </NavigationMenuList>
         </NavigationMenu>
+        
+        <Switch onCheckedChange={onCheckedChange} checked={isDark}/>
 
         <Button onClick={()=> setOpen(true)}>
         ⋱⋱ Cari kota
         </Button>
 
-        <Switch onCheckedChange={onCheckedChange} checked={isDark}/>
 
         </nav>
 
