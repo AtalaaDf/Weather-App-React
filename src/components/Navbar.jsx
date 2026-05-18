@@ -7,6 +7,7 @@
     import { Link } from 'react-router-dom'
     import { Button } from '@/components/ui/button'
     import { Command } from '@/components/ui/command'
+import { Cloud } from 'lucide-react'
     const navLinkClass = "px-3 py-2 rounded-md text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
     
 function Navbar(){
@@ -44,7 +45,9 @@ function Navbar(){
 
         <nav className="sticky top-0 backdrop-blur-sm border-b flex
         justify-between items-center px-6 py-3">
-        <h1 className='text-blue-500 font-bold text-xl'>⛅Weather App</h1>
+        <h1 className='text-blue-500 font-bold text-xl flex gap-1'>
+            <span><Cloud/></span>
+            Weather App</h1>
         
         <NavigationMenu className={"font-medium text-muted-foreground"}>
             <NavigationMenuList className={"gap-2 flex-row items-center"}>
